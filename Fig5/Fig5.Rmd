@@ -1,0 +1,12 @@
+---
+title: "Figure 5.Colonisation and nitrogen fixation by SynComs in vascular tissues of maize plants."
+author: "Liyu Zhang"
+date: "2022/01/02"
+output: html_document
+---
+
+a, Potted plant experiment with GFP-tagged SynComs. SynComs with no GFP tags served as control. Images are confocal laser scanning microscopy (CLSM) micrographs.  
+
+b, c, d, Potted plant experiment with growth mixture containing 15N. Growth profile (b) at 35 days after transplanting after inoculation with control and SynComs, dry matter of root, stem and leaf (c), and root/shoot ratio (d) of maize plants at 65 days after transplanting after inoculation with control and SynComs. Horizontal bars within boxplot represent medians. Asterisk indicates a significant difference at FDR adjusted P < 0.01.
+
+The figture.c,d is drawn by GraphPad Prism8.0.0.
