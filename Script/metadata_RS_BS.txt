@@ -1,0 +1,269 @@
+#SampleID	Env	SourceSink	id
+BCCCK1	Bulk Soil	Source	
+BCCCK2	Bulk Soil	Source	
+BCCCK3	Bulk Soil	Source	
+BCCNPK1	Bulk Soil	Source	
+BCCNPK2	Bulk Soil	Source	
+BCCNPK3	Bulk Soil	Source	
+BCCNPKM1	Bulk Soil	Source	
+BCCNPKM2	Bulk Soil	Source	
+BCCNPKM3	Bulk Soil	Source	
+BHL20CK1	Bulk Soil	Source	
+BHL20CK2	Bulk Soil	Source	
+BHL20CK3	Bulk Soil	Source	
+BHL20NPK1	Bulk Soil	Source	
+BHL20NPK2	Bulk Soil	Source	
+BHL20NPK3	Bulk Soil	Source	
+BHL20NPKM1	Bulk Soil	Source	
+BHL20NPKM2	Bulk Soil	Source	
+BHL20NPKM3	Bulk Soil	Source	
+BJX20CK1	Bulk Soil	Source	
+BJX20CK2	Bulk Soil	Source	
+BJX20CK3	Bulk Soil	Source	
+BJX20CK4	Bulk Soil	Source	
+BJX20CK5	Bulk Soil	Source	
+BJX20CK6	Bulk Soil	Source	
+BJX20CK7	Bulk Soil	Source	
+BJX20CK8	Bulk Soil	Source	
+BJX20CK9	Bulk Soil	Source	
+BJX20NPK1	Bulk Soil	Source	
+BJX20NPK2	Bulk Soil	Source	
+BJX20NPK3	Bulk Soil	Source	
+BJX20NPK4	Bulk Soil	Source	
+BJX20NPK5	Bulk Soil	Source	
+BJX20NPK6	Bulk Soil	Source	
+BJX20NPK7	Bulk Soil	Source	
+BJX20NPK8	Bulk Soil	Source	
+BJX20NPK9	Bulk Soil	Source	
+BJX20NPKM1	Bulk Soil	Source	
+BJX20NPKM2	Bulk Soil	Source	
+BJX20NPKM3	Bulk Soil	Source	
+BJX20NPKM4	Bulk Soil	Source	
+BJX20NPKM5	Bulk Soil	Source	
+BJX20NPKM6	Bulk Soil	Source	
+BJX20NPKM7	Bulk Soil	Source	
+BJX20NPKM8	Bulk Soil	Source	
+BJX20NPKM9	Bulk Soil	Source	
+BQYCK1	Bulk Soil	Source	
+BQYCK2	Bulk Soil	Source	
+BQYCK3	Bulk Soil	Source	
+BQYCK4	Bulk Soil	Source	
+BQYCK5	Bulk Soil	Source	
+BQYCK6	Bulk Soil	Source	
+BQYCK7	Bulk Soil	Source	
+BQYCK8	Bulk Soil	Source	
+BQYCK9	Bulk Soil	Source	
+BQYNPK1	Bulk Soil	Source	
+BQYNPK2	Bulk Soil	Source	
+BQYNPK3	Bulk Soil	Source	
+BQYNPK4	Bulk Soil	Source	
+BQYNPK5	Bulk Soil	Source	
+BQYNPK6	Bulk Soil	Source	
+BQYNPK7	Bulk Soil	Source	
+BQYNPK8	Bulk Soil	Source	
+BQYNPK9	Bulk Soil	Source	
+BQYNPKM1	Bulk Soil	Source	
+BQYNPKM2	Bulk Soil	Source	
+BQYNPKM3	Bulk Soil	Source	
+BQYNPKM4	Bulk Soil	Source	
+BQYNPKM5	Bulk Soil	Source	
+BQYNPKM6	Bulk Soil	Source	
+BQYNPKM7	Bulk Soil	Source	
+BQYNPKM8	Bulk Soil	Source	
+BQYNPKM9	Bulk Soil	Source	
+BYCCK1	Bulk Soil	Source	
+BYCCK2	Bulk Soil	Source	
+BYCCK3	Bulk Soil	Source	
+BYCCK4	Bulk Soil	Source	
+BYCCK5	Bulk Soil	Source	
+BYCCK6	Bulk Soil	Source	
+BYCCK7	Bulk Soil	Source	
+BYCCK8	Bulk Soil	Source	
+BYCCK9	Bulk Soil	Source	
+BYCNPK1	Bulk Soil	Source	
+BYCNPK2	Bulk Soil	Source	
+BYCNPK3	Bulk Soil	Source	
+BYCNPK4	Bulk Soil	Source	
+BYCNPK5	Bulk Soil	Source	
+BYCNPK6	Bulk Soil	Source	
+BYCNPK7	Bulk Soil	Source	
+BYCNPK8	Bulk Soil	Source	
+BYCNPK9	Bulk Soil	Source	
+BYCNPKM1	Bulk Soil	Source	
+BYCNPKM2	Bulk Soil	Source	
+BYCNPKM3	Bulk Soil	Source	
+BYCNPKM4	Bulk Soil	Source	
+BYCNPKM5	Bulk Soil	Source	
+BYCNPKM6	Bulk Soil	Source	
+BYCNPKM7	Bulk Soil	Source	
+BYCNPKM8	Bulk Soil	Source	
+BYCNPKM9	Bulk Soil	Source	
+BYYCK1	Bulk Soil	Source	
+BYYCK2	Bulk Soil	Source	
+BYYCK3	Bulk Soil	Source	
+BYYCK4	Bulk Soil	Source	
+BYYCK5	Bulk Soil	Source	
+BYYCK6	Bulk Soil	Source	
+BYYCK7	Bulk Soil	Source	
+BYYCK8	Bulk Soil	Source	
+BYYCK9	Bulk Soil	Source	
+BYYNPK1	Bulk Soil	Source	
+BYYNPK2	Bulk Soil	Source	
+BYYNPK3	Bulk Soil	Source	
+BYYNPK4	Bulk Soil	Source	
+BYYNPK5	Bulk Soil	Source	
+BYYNPK6	Bulk Soil	Source	
+BYYNPK7	Bulk Soil	Source	
+BYYNPK8	Bulk Soil	Source	
+BYYNPK9	Bulk Soil	Source	
+BYYNPKM1	Bulk Soil	Source	
+BYYNPKM2	Bulk Soil	Source	
+BYYNPKM3	Bulk Soil	Source	
+BYYNPKM4	Bulk Soil	Source	
+BYYNPKM5	Bulk Soil	Source	
+BYYNPKM6	Bulk Soil	Source	
+BYYNPKM7	Bulk Soil	Source	
+BYYNPKM8	Bulk Soil	Source	
+BYYNPKM9	Bulk Soil	Source	
+RCCLCK1	Rhizosphere Soil	Sink	1
+RCCLCK2	Rhizosphere Soil	Sink	2
+RCCLCK3	Rhizosphere Soil	Sink	3
+RCCLNPK1	Rhizosphere Soil	Sink	4
+RCCLNPK2	Rhizosphere Soil	Sink	5
+RCCLNPK3	Rhizosphere Soil	Sink	6
+RCCLNPKM1	Rhizosphere Soil	Sink	7
+RCCLNPKM2	Rhizosphere Soil	Sink	8
+RCCLNPKM3	Rhizosphere Soil	Sink	9
+RCCSCK1	Rhizosphere Soil	Sink	10
+RCCSCK2	Rhizosphere Soil	Sink	11
+RCCSCK3	Rhizosphere Soil	Sink	12
+RCCSNPK1	Rhizosphere Soil	Sink	13
+RCCSNPK2	Rhizosphere Soil	Sink	14
+RCCSNPK3	Rhizosphere Soil	Sink	15
+RCCSNPKM1	Rhizosphere Soil	Sink	16
+RCCSNPKM2	Rhizosphere Soil	Sink	17
+RCCSNPKM3	Rhizosphere Soil	Sink	18
+RHL20LCK1	Rhizosphere Soil	Sink	19
+RHL20LCK2	Rhizosphere Soil	Sink	20
+RHL20LCK3	Rhizosphere Soil	Sink	21
+RHL20LNPK1	Rhizosphere Soil	Sink	22
+RHL20LNPK2	Rhizosphere Soil	Sink	23
+RHL20LNPK3	Rhizosphere Soil	Sink	24
+RHL20LNPKM1	Rhizosphere Soil	Sink	25
+RHL20LNPKM2	Rhizosphere Soil	Sink	26
+RHL20LNPKM3	Rhizosphere Soil	Sink	27
+RHL20SCK1	Rhizosphere Soil	Sink	28
+RHL20SCK2	Rhizosphere Soil	Sink	29
+RHL20SCK3	Rhizosphere Soil	Sink	30
+RHL20SNPK1	Rhizosphere Soil	Sink	31
+RHL20SNPK2	Rhizosphere Soil	Sink	32
+RHL20SNPK3	Rhizosphere Soil	Sink	33
+RHL20SNPKM1	Rhizosphere Soil	Sink	34
+RHL20SNPKM2	Rhizosphere Soil	Sink	35
+RHL20SNPKM3	Rhizosphere Soil	Sink	36
+RJX20CK1	Rhizosphere Soil	Sink	37
+RJX20CK2	Rhizosphere Soil	Sink	38
+RJX20CK3	Rhizosphere Soil	Sink	39
+RJX20CK4	Rhizosphere Soil	Sink	40
+RJX20CK5	Rhizosphere Soil	Sink	41
+RJX20CK6	Rhizosphere Soil	Sink	42
+RJX20CK7	Rhizosphere Soil	Sink	43
+RJX20CK8	Rhizosphere Soil	Sink	44
+RJX20CK9	Rhizosphere Soil	Sink	45
+RJX20NPK1	Rhizosphere Soil	Sink	46
+RJX20NPK2	Rhizosphere Soil	Sink	47
+RJX20NPK3	Rhizosphere Soil	Sink	48
+RJX20NPK4	Rhizosphere Soil	Sink	49
+RJX20NPK5	Rhizosphere Soil	Sink	50
+RJX20NPK6	Rhizosphere Soil	Sink	51
+RJX20NPK7	Rhizosphere Soil	Sink	52
+RJX20NPK8	Rhizosphere Soil	Sink	53
+RJX20NPK9	Rhizosphere Soil	Sink	54
+RJX20NPKM1	Rhizosphere Soil	Sink	55
+RJX20NPKM2	Rhizosphere Soil	Sink	56
+RJX20NPKM3	Rhizosphere Soil	Sink	57
+RJX20NPKM4	Rhizosphere Soil	Sink	58
+RJX20NPKM5	Rhizosphere Soil	Sink	59
+RJX20NPKM6	Rhizosphere Soil	Sink	60
+RJX20NPKM8	Rhizosphere Soil	Sink	61
+RJX20NPKM9	Rhizosphere Soil	Sink	62
+RQYCK1	Rhizosphere Soil	Sink	63
+RQYCK2	Rhizosphere Soil	Sink	64
+RQYCK3	Rhizosphere Soil	Sink	65
+RQYCK4	Rhizosphere Soil	Sink	66
+RQYCK5	Rhizosphere Soil	Sink	67
+RQYCK6	Rhizosphere Soil	Sink	68
+RQYCK7	Rhizosphere Soil	Sink	69
+RQYCK8	Rhizosphere Soil	Sink	70
+RQYCK9	Rhizosphere Soil	Sink	71
+RQYNPK1	Rhizosphere Soil	Sink	72
+RQYNPK2	Rhizosphere Soil	Sink	73
+RQYNPK3	Rhizosphere Soil	Sink	74
+RQYNPK4	Rhizosphere Soil	Sink	75
+RQYNPK5	Rhizosphere Soil	Sink	76
+RQYNPK6	Rhizosphere Soil	Sink	77
+RQYNPK7	Rhizosphere Soil	Sink	78
+RQYNPK8	Rhizosphere Soil	Sink	79
+RQYNPK9	Rhizosphere Soil	Sink	80
+RQYNPKM1	Rhizosphere Soil	Sink	81
+RQYNPKM2	Rhizosphere Soil	Sink	82
+RQYNPKM3	Rhizosphere Soil	Sink	83
+RQYNPKM4	Rhizosphere Soil	Sink	84
+RQYNPKM5	Rhizosphere Soil	Sink	85
+RQYNPKM6	Rhizosphere Soil	Sink	86
+RQYNPKM7	Rhizosphere Soil	Sink	87
+RQYNPKM8	Rhizosphere Soil	Sink	88
+RQYNPKM9	Rhizosphere Soil	Sink	89
+RYCCK1	Rhizosphere Soil	Sink	90
+RYCCK2	Rhizosphere Soil	Sink	91
+RYCCK3	Rhizosphere Soil	Sink	92
+RYCCK4	Rhizosphere Soil	Sink	93
+RYCCK5	Rhizosphere Soil	Sink	94
+RYCCK6	Rhizosphere Soil	Sink	95
+RYCCK7	Rhizosphere Soil	Sink	96
+RYCCK8	Rhizosphere Soil	Sink	97
+RYCCK9	Rhizosphere Soil	Sink	98
+RYCNPK1	Rhizosphere Soil	Sink	99
+RYCNPK2	Rhizosphere Soil	Sink	100
+RYCNPK3	Rhizosphere Soil	Sink	101
+RYCNPK4	Rhizosphere Soil	Sink	102
+RYCNPK5	Rhizosphere Soil	Sink	103
+RYCNPK6	Rhizosphere Soil	Sink	104
+RYCNPK7	Rhizosphere Soil	Sink	105
+RYCNPK8	Rhizosphere Soil	Sink	106
+RYCNPK9	Rhizosphere Soil	Sink	107
+RYCNPKM1	Rhizosphere Soil	Sink	108
+RYCNPKM2	Rhizosphere Soil	Sink	109
+RYCNPKM3	Rhizosphere Soil	Sink	110
+RYCNPKM4	Rhizosphere Soil	Sink	111
+RYCNPKM5	Rhizosphere Soil	Sink	112
+RYCNPKM6	Rhizosphere Soil	Sink	113
+RYCNPKM7	Rhizosphere Soil	Sink	114
+RYCNPKM8	Rhizosphere Soil	Sink	115
+RYCNPKM9	Rhizosphere Soil	Sink	116
+RYYCK2	Rhizosphere Soil	Sink	117
+RYYCK3	Rhizosphere Soil	Sink	118
+RYYCK4	Rhizosphere Soil	Sink	119
+RYYCK5	Rhizosphere Soil	Sink	120
+RYYCK6	Rhizosphere Soil	Sink	121
+RYYCK7	Rhizosphere Soil	Sink	122
+RYYCK8	Rhizosphere Soil	Sink	123
+RYYCK9	Rhizosphere Soil	Sink	124
+RYYNPK1	Rhizosphere Soil	Sink	125
+RYYNPK2	Rhizosphere Soil	Sink	126
+RYYNPK3	Rhizosphere Soil	Sink	127
+RYYNPK4	Rhizosphere Soil	Sink	128
+RYYNPK5	Rhizosphere Soil	Sink	129
+RYYNPK6	Rhizosphere Soil	Sink	130
+RYYNPK7	Rhizosphere Soil	Sink	131
+RYYNPK8	Rhizosphere Soil	Sink	132
+RYYNPK9	Rhizosphere Soil	Sink	133
+RYYNPKM1	Rhizosphere Soil	Sink	134
+RYYNPKM2	Rhizosphere Soil	Sink	135
+RYYNPKM3	Rhizosphere Soil	Sink	136
+RYYNPKM4	Rhizosphere Soil	Sink	137
+RYYNPKM5	Rhizosphere Soil	Sink	138
+RYYNPKM6	Rhizosphere Soil	Sink	139
+RYYNPKM7	Rhizosphere Soil	Sink	140
+RYYNPKM8	Rhizosphere Soil	Sink	141
+RYYNPKM9	Rhizosphere Soil	Sink	142

@@ -1,0 +1,115 @@
+---
+title: "Compare"
+author: "Liyu Zhang"
+date: "2021/12/31"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+data_clean <- function(otu, design, type=c("relative", "absolute"), threshold=0.001, times=100){
+
+  
+  if (type == "absolute"){
+    otu_relative <- apply(otu, 2, function(x){x/sum(x)})
+  }else {otu_relative <- otu}
+
+
+  idx <- rowSums(otu_relative > threshold) >= 1
+  otu_threshold <- as.data.frame(otu_relative[idx, ])
+  otu_threshold$OTUs <- row.names(otu_threshold)
+  
+ 
+  otu_longer <- pivot_longer(data=otu_threshold, 
+                             cols=-OTUs,
+                             names_to="SampleID", 
+                             values_to="value")
+  
+ 
+  merge_data <- merge(otu_longer, design, by ="SampleID")
+ 
+  otu <- subset(merge_data, select=c("Group","OTUs","value"))
+  otu_mean <- otu %>% group_by(OTUs, Group) %>% 
+    summarise(value=mean(value))
+  otu_tern <- otu_mean %>%
+    group_by(Group, OTUs) %>%
+    mutate(index=row_number()) %>%
+    pivot_wider(names_from=Group,values_from=value) %>%
+    select(-index)
+  otu_tern$size <- (apply(otu_tern[2:4], 1, mean))*times   
+  return(otu_tern)
+}
+```
+
+```{r echo=T}
+otutab <- read.delim("otu_VE1.txt", header=T, row.names=1)
+design <- read.delim("metadata_VE.txt", header=T)
+design = design[,c("SampleID","Group")]
+otu_tern <- data_clean(otutab, design, type="absolute", threshold=0.001, times=100)
+```
+
+```{r}
+tax = read.table("taxonomy.txt", header=T, row.names= 1, sep="\t", comment.char = "")
+tax$OTUs=rownames(tax)
+otu_tern <-merge(otu_tern,tax,by="OTUs")
+```
+
+
+```{r }
+library(edgeR)
+enrich_data <- function(otu, design, p.value=0.05, adjust.method="fdr"){
+  
+  dge_list <- DGEList(counts=otu, group=design$Group)
+  keep <- rowSums(cpm(dge_list) > 1 ) >= 2
+  dge_keep <- dge_list[keep, ,keep.lib.sizes=F]
+  dge <- calcNormFactors(dge_keep)
+  design.mat <- model.matrix(~ 0 + dge$samples$group)
+  d2 <- estimateGLMCommonDisp(dge, design.mat)
+  d2 <- estimateGLMTagwiseDisp(d2, design.mat)
+  fit <- glmFit(d2, design.mat)
+  group_index <- as.character(design$Group[!duplicated(design$Group)])
+  lrt_1_2 <- glmLRT(fit, contrast=c(1, -1, 0))
+  lrt_1_3 <- glmLRT(fit, contrast=c(1, 0, -1))
+
+  de_1_2 <- decideTestsDGE(lrt_1_2, adjust.method=adjust.method, 
+                 p.value=p.value)
+  de_1_3 <- decideTestsDGE(lrt_1_3, adjust.method=adjust.method, 
+                           p.value=p.value)
+  
+  rich_1 <- rownames(otu)[de_1_2 == 1 & de_1_3 == 1]
+  enrich_1 <- data.frame(OTUs=rich_1, 
+                               enrich=rep(group_index[1], length(rich_1)))
+  ###############################
+  lrt_2_3 <- glmLRT(fit, contrast=c(0, 1, -1))
+  lrt_2_1 <- glmLRT(fit, contrast=c(-1, 1, 0))
+  
+  de_2_3 <- decideTestsDGE(lrt_2_3, adjust.method=adjust.method, 
+                           p.value=p.value)
+  de_2_1 <- decideTestsDGE(lrt_2_1, adjust.method=adjust.method, 
+                           p.value=p.value)
+  
+  rich_2 <- rownames(otu)[de_2_3 == 1 & de_2_1 == 1]
+  enrich_2 <- data.frame(OTUs=rich_2, 
+                         enrich=rep(group_index[2], length(rich_2)))
+  ###################
+  lrt_3_1 <- glmLRT(fit, contrast=c(-1, 0, 1))
+  lrt_3_2 <- glmLRT(fit, contrast=c(0, -1, 1))
+  
+  de_3_1 <- decideTestsDGE(lrt_3_1, adjust.method=adjust.method, 
+                           p.value=p.value)
+  de_3_2 <- decideTestsDGE(lrt_3_2, adjust.method=adjust.method, 
+                           p.value=p.value)
+  
+  rich_3 <- rownames(otu)[de_3_1 == 1 & de_3_2 == 1]
+  enrich_3 <- data.frame(OTUs=rich_3, 
+                         enrich=rep(group_index[3], length(rich_3)))
+  enrich_index <- rbind(enrich_1, enrich_2, enrich_3)
+  return(enrich_index)
+}
+```
+
+```{r Ternary plots}
+library(ggtern)
+enrich_index <- enrich_data(otutab, design, p.value=0.05)
+Tern_data1 <- merge(otu_tern, enrich_index, by="OTUs", all.x=T)
+```

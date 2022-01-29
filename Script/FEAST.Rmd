@@ -1,0 +1,21 @@
+---
+title: "FEAST"
+author: "Liyu Zhang"
+date: "2022年1月5日"
+output: html_document
+---
+
+```{r FEAST}
+#Packages <- c("Rcpp", "RcppArmadillo", "vegan", "dplyr", "reshape2", "gridExtra", "ggplot2", "ggthemes")
+#install.packages(Packages)
+#lapply(Packages, library, character.only = TRUE)
+#devtools::install_github("cozygene/FEAST")
+library(FEAST)
+metadata = read.table("metadata_RS_BS.txt", header=T, row.names=1, sep="\t", comment.char="")
+otus <- read.table("otu_filter_rare_RS-BS.txt",sep='\t',header=T,row.names=1,comment='')
+otus <- t(as.matrix(otus))
+idx <- intersect(rownames(metadata), rownames(otus))
+otus <- otus[idx,]
+metadata <- metadata[idx,]
+FEAST_output <- FEAST(C = otus, metadata = metadata, different_sources_flag = 0, dir_path = "D:/Fig2/FEAST",outfile="RS-BS.txt")
+```
