@@ -1,0 +1,79 @@
+TREE_COLORS
+SEPARATOR TAB
+COLOR	#a6cee3
+DATASET_LABEL	Phylum
+LEGEND_COLORS	#a6cee3	#1f78b4	#b2df8a	#33a02c	#fb9a99	#e31a1c
+LEGEND_LABELS	Actinobacteriota	Alphaproteobacteria	Bacteroidota	Deinococcota	Firmicutes	Gammaproteobacteria
+LEGEND_SHAPES	1	1	1	1	1	1
+LEGEND_TITLE	Phylum
+DATA
+OTU_5	range	#e31a1c	Gammaproteobacteria
+OTU_365	range	#e31a1c	Gammaproteobacteria
+OTU_2	range	#e31a1c	Gammaproteobacteria
+OTU_194	range	#e31a1c	Gammaproteobacteria
+OTU_8	range	#e31a1c	Gammaproteobacteria
+OTU_36	range	#e31a1c	Gammaproteobacteria
+OTU_22	range	#fb9a99	Firmicutes
+OTU_7175	range	#e31a1c	Gammaproteobacteria
+OTU_69	range	#e31a1c	Gammaproteobacteria
+OTU_6	range	#e31a1c	Gammaproteobacteria
+OTU_19	range	#e31a1c	Gammaproteobacteria
+OTU_671	range	#e31a1c	Gammaproteobacteria
+OTU_55	range	#fb9a99	Firmicutes
+OTU_39	range	#e31a1c	Gammaproteobacteria
+OTU_53	range	#e31a1c	Gammaproteobacteria
+OTU_81	range	#fb9a99	Firmicutes
+OTU_136	range	#b2df8a	Bacteroidota
+OTU_77	range	#e31a1c	Gammaproteobacteria
+OTU_21	range	#e31a1c	Gammaproteobacteria
+OTU_30	range	#fb9a99	Firmicutes
+OTU_3459	range	#e31a1c	Gammaproteobacteria
+OTU_4175	range	#e31a1c	Gammaproteobacteria
+OTU_25	range	#e31a1c	Gammaproteobacteria
+OTU_11360	range	#e31a1c	Gammaproteobacteria
+OTU_843	range	#e31a1c	Gammaproteobacteria
+OTU_200	range	#fb9a99	Firmicutes
+OTU_44	range	#e31a1c	Gammaproteobacteria
+OTU_37	range	#b2df8a	Bacteroidota
+OTU_4	range	#a6cee3	Actinobacteriota
+OTU_13615	range	#e31a1c	Gammaproteobacteria
+OTU_286	range	#e31a1c	Gammaproteobacteria
+OTU_3415	range	#b2df8a	Bacteroidota
+OTU_331	range	#1f78b4	Alphaproteobacteria
+OTU_1735	range	#e31a1c	Gammaproteobacteria
+OTU_94	range	#b2df8a	Bacteroidota
+OTU_15	range	#a6cee3	Actinobacteriota
+OTU_12	range	#1f78b4	Alphaproteobacteria
+OTU_3	range	#1f78b4	Alphaproteobacteria
+OTU_3691	range	#e31a1c	Gammaproteobacteria
+OTU_70	range	#e31a1c	Gammaproteobacteria
+OTU_18	range	#1f78b4	Alphaproteobacteria
+OTU_13859	range	#e31a1c	Gammaproteobacteria
+OTU_1423	range	#b2df8a	Bacteroidota
+OTU_7781	range	#e31a1c	Gammaproteobacteria
+OTU_1	range	#e31a1c	Gammaproteobacteria
+OTU_614	range	#b2df8a	Bacteroidota
+OTU_139	range	#fb9a99	Firmicutes
+OTU_1199	range	#e31a1c	Gammaproteobacteria
+OTU_12319	range	#fb9a99	Firmicutes
+OTU_11839	range	#e31a1c	Gammaproteobacteria
+OTU_11889	range	#fb9a99	Firmicutes
+OTU_48	range	#e31a1c	Gammaproteobacteria
+OTU_10	range	#33a02c	Deinococcota
+OTU_7	range	#1f78b4	Alphaproteobacteria
+OTU_14	range	#1f78b4	Alphaproteobacteria
+OTU_13	range	#a6cee3	Actinobacteriota
+OTU_20	range	#1f78b4	Alphaproteobacteria
+OTU_16	range	#a6cee3	Actinobacteriota
+OTU_45	range	#e31a1c	Gammaproteobacteria
+OTU_5226	range	#e31a1c	Gammaproteobacteria
+OTU_10916	range	#b2df8a	Bacteroidota
+OTU_8155	range	#e31a1c	Gammaproteobacteria
+OTU_10588	range	#fb9a99	Firmicutes
+OTU_9951	range	#e31a1c	Gammaproteobacteria
+OTU_28	range	#1f78b4	Alphaproteobacteria
+OTU_9437	range	#1f78b4	Alphaproteobacteria
+OTU_11849	range	#e31a1c	Gammaproteobacteria
+OTU_9006	range	#e31a1c	Gammaproteobacteria
+OTU_31	range	#1f78b4	Alphaproteobacteria
+OTU_7904	range	#e31a1c	Gammaproteobacteria
