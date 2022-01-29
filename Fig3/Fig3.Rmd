@@ -1,0 +1,139 @@
+---
+title: "Functional characteristics of vascular-inhabiting bacterial communities."
+author: "Liyu Zhang"
+date: "2021/12/31"
+output: html_document
+---
+
+## a.Heatmap 
+a, Heatmap of metabolic and ecological functions of bacteria based on FAPROTAX. Data are based on OTUs occurrence (number of OTUs capable of each function) in soil and plant compartments (log(x+1) transformed).  
+```{r heatmap, warning=FALSE}
+fap = read.table("faprotax.txt", header=T, row.names=1, sep="\t")
+library(reshape2)
+fap$fap=rownames(fap)
+fap_melt <- melt(fap,id.vars = c("fap"),variable.name = "SampleID",value.name = "RA")
+group = read.delim("metadata.txt", header=T, sep="\t",stringsAsFactors = FALSE,check.names = FALSE)
+fap_merge <-merge(fap_melt,group,by="SampleID")
+library(doBy)
+fap_mean <- summaryBy(RA~fap+Comparts, fap_merge, FUN = c(mean))
+names(fap_mean) <- c('fap', 'Compartments', 'RA')
+library(pheatmap)
+fap_dcast <- dcast(fap_mean,fap~Compartments,value.var="RA")
+rownames(fap_dcast)<-fap_dcast[,1]
+fap_dcast<-fap_dcast[,-1]
+fap_dcast<-fap_dcast[, c("BS","RS","RE","VE","SE","LE","P")]
+scale_test <- apply(fap_dcast, 2, function(x) log2(x+1))
+annotation_col = data.frame(Group = factor(rep(c('Belowground','Aboveground'), c(3,4))),row.names = colnames(scale_test)) 
+p=pheatmap(scale_test,cluster_row = TRUE, cluster_col = TRUE,cutree_col = 2,filename = paste( "Fap_compartments_heatmap.pdf", sep=""),show_colnames = T,show_rownames = T,annotation_col = annotation_col)
+
+p
+```
+
+## b.Boxplot
+b, Number of OTUs capable of nitrogen cycling in soil and plant compartments. Boxplot displays the median and interquartile range. Upper and lower whiskers extend to data no more than 1.5× the interquartile range from upper and lower edge of the box, respectively. Letters indicate significant differences among soil and plant compartments (Wilcoxon test, PFDR < 0.05).
+
+This figure is manually modified and stat label added by Adobe Illustrator.
+```{r warning=FALSE}
+NC = read.table("NC.txt", header=T, row.names=1, sep="\t", comment.char="")
+design = read.table("metadata.txt", header=T, row.names=1, sep="\t")
+idx = colnames(NC) %in% rownames(design)
+NC=NC[,idx]
+design=design[colnames(NC),]
+NC = as.data.frame(apply(NC, 2, function(x) log2(x+1)))
+names(NC)[1] <- c('RA')
+library(ggplot2)
+library(reshape2)
+NC$SampleID=rownames(NC)
+NC_merge <-merge(NC,design,by.x = "SampleID",by.y = "row.names", all.x = T)
+col=c("#1f78b4","#b2df8a","#a6cee3","#33a02c","#fb9a99","#fdbf6f","#e31a1c")
+p = ggplot(NC_merge, aes(x=Comparts, y=RA,color = Comparts)) +
+geom_boxplot(position = "dodge", alpha=1, outlier.size=0.3, size=0.5,width = 0.6)+
+geom_jitter(size = 1, width = 0.2,alpha=0.5)+
+scale_color_manual(values = col)+
+  labs(x = 'Compartments', y = 'Number of OTUs with nitrogen cycling (log(x+1))')+scale_x_discrete(limits=c("BS","RS","RE","VE","SE","LE","P"))+
+theme(legend.position = "none")+theme(plot.title = element_text(size = 8))+theme_classic() + 
+    theme(axis.text.x = element_text(size = 8),axis.text.y = element_text(size = 8))+
+    theme(axis.title.y= element_text(size=12))+theme(axis.title.x = element_text(size = 12))+
+    theme(legend.title=element_text(size=5),legend.text=element_text(size=5))
+p
+ggsave("fap_NC_boxplot.pdf", p, width = 150, height = 120,units = "mm")
+
+
+# A Kruskal-Wallis test is the nonparametric equivalent of the one-way ANOVA and is typically used when the normality assumption is violated. 
+model = kruskal.test(RA ~ Comparts, data=NC_merge)
+model
+
+NC_merge$Comparts <- factor(NC_merge$Comparts)
+group <- levels(NC_merge$Comparts)
+group1 <- NULL
+group2 <- NULL
+p <- NULL
+
+for (i in 1:(length(group) - 1)) {
+    for (j in (i + 1):length(group)) {
+        group1 <- c(group1, group[i])
+        group2 <- c(group2, group[j])
+        group_ij <- subset(NC_merge, Comparts %in% c(group[i], group[j]))
+        group_ij$Comparts <- factor(group_ij$Comparts, levels = c(group[i], group[j]))
+        
+        wilcox_test <- wilcox.test(RA ~ Comparts, data = group_ij, alternative = 'two.sided', conf.level = 0.95)
+        p <- c(p, wilcox_test$p.value)
+    }
+}
+result <- data.frame(group1, group2, p)
+result$padj <- p.adjust(result$p, method = 'BH')	#Benjamini  p 
+result
+```
+
+
+## c.Boxplot
+ c, Ratio of nifH gene to 16S rRNA in each compartment under fertilisation treatments, reflecting the relative N-fixation potential of bacterial communities (Wilcoxon test, PFDR < 0.05). 
+
+```{r Ratio of nifH tO 16S rRNA, warning=FALSE}
+design = read.table("metadata.txt", header=T, row.names=1, sep="\t")
+m="CK"
+#m="NPK"
+#m="NPKM"
+sub_design = subset(design, design$Treatment %in% c(m))
+nifH = read.table("nifH.txt", header=T,  row.names=1, sep="\t", comment.char="") 
+idx = rownames(sub_design) %in% rownames(NC)
+sub_design=sub_design[idx,]
+nifH=nifH[rownames(sub_design),]
+nifH_merge <-merge(nifH,design,by.x = "SampleID",by.y = "row.names", all.x = T)
+library(ggplot2)
+col=c("#1F78B4","#B2DF8A","#A6CEE3","#33A02C","#FB9A99","#FDBF6F","#E31A1C")
+p = ggplot(nifH_merge, aes(x=Comparts, y=LOG,color = Comparts)) +
+     geom_boxplot(position = "dodge", alpha=1, outlier.size=0.3, size=0.5,width = 0.6)+
+     geom_jitter(size = 1, width = 0.2,alpha=0.5)+
+     scale_color_manual(values = col)+
+     labs(x = m, y = 'Ratio of nifH tO 16S rRNA (log transformed)')+scale_x_discrete(limits=c("BS","RS","RE","VE","SE","LE","P"))+
+  theme_classic()+theme(axis.text.x = element_text(size = 8),axis.text.y = element_text(size = 8))+
+    theme(axis.title.y= element_text(size=12))+theme(axis.title.x = element_text(size = 12))+
+    theme(legend.title=element_text(size=5),legend.text=element_text(size=5))
+p
+
+
+nifH_merge$Comparts <- factor(nifH_merge$Comparts)
+kruskal.test(nifH~Comparts, data = nifH_merge)
+
+group <- levels(nifH_merge$Comparts)
+group1 <- NULL
+group2 <- NULL
+p <- NULL
+
+for (i in 1:(length(group) - 1)) {
+    for (j in (i + 1):length(group)) {
+        group1 <- c(group1, group[i])
+        group2 <- c(group2, group[j])
+        group_ij <- subset(nifH_merge, Comparts%in% c(group[i], group[j]))
+        group_ij$Comparts <- factor(group_ij$Comparts, levels = c(group[i], group[j]))
+        
+        wilcox_test <- wilcox.test(nifH ~ Comparts, data = group_ij, alternative = 'two.sided', conf.level = 0.95)
+        p <- c(p, wilcox_test$p.value)
+    }
+}
+result <- data.frame(group1, group2, p)
+result$padj <- p.adjust(result$p, method = 'BH')
+result
+```
+
